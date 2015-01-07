@@ -20,8 +20,6 @@ function cleanUrl(url) {
     return encodedUrl;
 }
 function Overlay(url) {
-    console.log(url);
-    console.log(cleanUrl(url));
     this.overlay = document.createElement('div');
     this.overlay.style.display = 'block';
     this.overlay.style.position = 'absolute';
@@ -37,16 +35,14 @@ function Overlay(url) {
 
     this.toggle = function() {
         this.overlay.style.display = (this.overlay.style.display==='block')?'none':'block';
-    }
+    };
 
     this.rm = function() {
-        console.log('rm');
         document.body.removeChild(this.overlay);
-    }
+    };
 }
 
 
 window.overlay = function(url) {
-    console.log(1);
     return new Overlay(url);
-}
+};
